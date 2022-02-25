@@ -2,16 +2,16 @@
 import addFunc from "./modules/add";
 
 const textEditor = (word: string) => {
-  const newWord = word.split(' ');
-  let i = 0;
+  const newWord = word.split(" ")
+  let i = 0
   while (i < newWord.length) {
     if (newWord[i] === 'Blossom') {
       newWord[i] = 'Bloom';
     }
-    i++;
+    i++
   }
 
-  return newWord.join(' ');
+  return newWord.join(' ')
 };
 
 const returnedVal = textEditor('Hello, my name is Blossom');

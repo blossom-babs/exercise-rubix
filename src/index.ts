@@ -1,5 +1,6 @@
 // a text editor function
-import addFunc from './modules/add';
+export {}
+const {addFunc} = require ('./modules/add');
 
 const textEditor = (word: string) => {
   const newWord = word.split(' ');

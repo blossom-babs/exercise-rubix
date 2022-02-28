@@ -17,4 +17,4 @@ This is a boilerplate code for reusable typescript setup, prettier code formatte
 
 *Note: husky version > 4 does not work.*
 
-*"type:module" should not be used: https://stackoverflow.com/a/60998638/14247589*
+*["type:module" should not be used](https://stackoverflow.com/a/60998638/14247589)*

@@ -1,6 +1,6 @@
 // a text editor function
-export {}
-const {addFunc} = require ('./modules/add');
+
+import addFunc from './controller/add';
 
 const textEditor = (word: string) => {
   const newWord = word.split(' ');
@@ -18,5 +18,4 @@ const textEditor = (word: string) => {
 const returnedVal = textEditor('Hello, my name is Blossom');
 console.log(returnedVal);
 
-console.log(addFunc);
 console.log(addFunc(6, 7));

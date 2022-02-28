@@ -1,5 +1,10 @@
+"use strict";
 // a text editor function
-import addFunc from './modules/add';
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const add_1 = __importDefault(require("./controller/add"));
 const textEditor = (word) => {
     const newWord = word.split(' ');
     let i = 0;
@@ -13,5 +18,4 @@ const textEditor = (word) => {
 };
 const returnedVal = textEditor('Hello, my name is Blossom');
 console.log(returnedVal);
-console.log(addFunc);
-console.log(addFunc(6, 7));
+console.log((0, add_1.default)(6, 7));

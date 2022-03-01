@@ -1,21 +1,22 @@
 "use strict";
-// a text editor function
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const add_1 = __importDefault(require("./controller/add"));
-const textEditor = (word) => {
-    const newWord = word.split(' ');
-    let i = 0;
+exports.textEditor = void 0;
+var add_1 = __importDefault(require("./controller/add"));
+console.log((0, add_1.default)(6, 7));
+// a text editor function
+var textEditor = function (word) {
+    var newWord = word.split(' ');
+    var i = 0;
     while (i < newWord.length) {
-        if (newWord[i] === 'Blossom') {
-            newWord[i] = 'Bloom';
+        if (newWord[i] === 'movie') {
+            newWord[i] = 'film';
         }
         i++;
     }
     return newWord.join(' ');
 };
-const returnedVal = textEditor('Hello, my name is Blossom');
-console.log(returnedVal);
-console.log((0, add_1.default)(6, 7));
+exports.textEditor = textEditor;
+(0, exports.textEditor)('The movie that just came out is a phenomenal movie');

@@ -1,13 +1,13 @@
-// a text editor function
-
 import addFunc from './controller/add';
+console.log(addFunc(6, 7));
 
-const textEditor = (word: string) => {
+// a text editor function
+export const textEditor = (word: string): string => {
   const newWord = word.split(' ');
   let i = 0;
   while (i < newWord.length) {
-    if (newWord[i] === 'Blossom') {
-      newWord[i] = 'Bloom';
+    if (newWord[i] === 'movie') {
+      newWord[i] = 'film';
     }
     i++;
   }
@@ -15,7 +15,4 @@ const textEditor = (word: string) => {
   return newWord.join(' ');
 };
 
-const returnedVal = textEditor('Hello, my name is Blossom');
-console.log(returnedVal);
-
-console.log(addFunc(6, 7));
+textEditor('The movie that just came out is a phenomenal movie');

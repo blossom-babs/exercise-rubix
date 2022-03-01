@@ -1,12 +1,14 @@
 # Typescript, eslint and prettier configuration repositiory
 
-This is a boilerplate code for reusable typescript setup, prettier code formatter and eslint as a linter
+This is a boilerplate code for reusable typescript setup, prettier code formatter, eslint linter, and jasmine unit testing
 
 ### Helpful links
 
 - [Typescript installation](https://www.typescriptlang.org/download).
 - [Prettier](https://prettier.io/)
 - [Eslint](https://eslint.org/)
+- [Jasmine](https://jasmine.github.io/)
+- [use Jasmine spec reporter with typescript](https://github.com/bcaudan/jasmine-spec-reporter/tree/673e22cd3b13732b421a25e862dbe887692ed345/examples/typescript)
 
 ### Bonus resources
 

@@ -1,7 +1,12 @@
-import { textEditor } from '../index';
+import supertest from 'supertest';
+import app from '../index';
 
-it('expects textEditor to return a string', () => {
-  expect(
-    textEditor('The movie that just came out is a phenomenal movie')
-  ).toEqual('The film that just came out is a phenomenal film');
+describe('tests endpoints', () => {
+  it('expects the get endpoint to work', async () => {
+    const request = supertest(app);
+    const response = await request.get('/');
+    expect(response).not.toBeFalsy();
+    expect(response.status).toBe(200);
+    expect(response.body.message).toBe('Hello world');
+  });
 });

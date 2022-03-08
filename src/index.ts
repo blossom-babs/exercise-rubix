@@ -3,7 +3,7 @@ const app = express();
 const port = 3000;
 
 const logger = (req: Request, res: Response, next: NextFunction) => {
-  if ((req.params.id === 'secure')) {
+  if (req.params.id === 'secure') {
     res.redirect('/api/admin');
     next();
   }

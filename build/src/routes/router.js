@@ -6,9 +6,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const resizeImage_1 = require("../controller/resizeImage");
 const routes = express_1.default.Router();
-routes.get('/', (req, res) => {
-    const result = (0, resizeImage_1.resizeImage)();
-    console.log('the result is from the router file', result);
+routes.get('/', resizeImage_1.resizeImages, (req, res) => {
+    console.log('the result is from the router file', resizeImage_1.resizeImages);
     res.status(200).send('this is the router');
 });
 exports.default = routes;

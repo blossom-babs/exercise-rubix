@@ -1,22 +1,10 @@
-import express, { Request, Response, NextFunction } from 'express';
+import express, { Request, Response } from 'express';
+import routes from './routes/router';
 const app = express();
-const port = 3000;
+const PORT = 3000;
 
-const logger = (req: Request, res: Response, next: NextFunction) => {
-  if (req.params.id === 'secure') {
-    res.redirect('/api/admin');
-    next();
-  }
-};
+app.use('/', routes);
 
-app.get('/:id', logger, (req, res) => {
-  res.send('this is the entry page');
-});
-
-app.get('/api/admin', (req, res) => {
-  res.send('this is the secure route');
-});
-
-app.listen(port, () => console.log('server is live on port', port));
+app.listen(PORT, () => console.log('server is listening on port', PORT));
 
 export default app;

@@ -9,7 +9,7 @@
     "lint-fix": "eslint . --ext .ts --fix",
     "jasmine": "jasmine",
     "test": "npx tsc && jasmine",
-    "build": "npm run prettier-format && npx tsc && node build "
+    "build": "npm run prettier-format && npx tsc && node build/src/. "
   },
   "keywords": [],
   "author": "",

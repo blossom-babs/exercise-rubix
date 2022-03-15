@@ -21,6 +21,7 @@ You're ready to hack (and | or contribute) ✌️
 
 ## Endpoints
 1. GET /
+> resized images are saved in the ./assets/resized/ folder
 
 ## 🤝 Contributing
 Contributions, issues and feature requests are welcome!

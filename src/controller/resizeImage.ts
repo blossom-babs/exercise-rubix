@@ -1,24 +1,33 @@
 import { Request, Response, NextFunction } from 'express';
 import sharp from 'sharp';
+import fs from 'fs';
 
-const images = [
-  './assets/original/encenadaport.jpeg',
-  './assets/original/fjord.jpeg',
-  './assets/original/icelandwaterfall.jpeg',
-  './assets/original/palmtunnel.jpeg',
-  './assets/original/santamonica.jpeg',
-];
+fs.mkdirSync('./assets/resized', { recursive: true }); // create folder for resized images
+
+// get files to be edited
+const images: string[] = [];
+
+fs.readdir('./assets/original', (err, files) => {
+  if (err) {
+    throw new Error(`${err}`);
+  } else {
+    files.forEach((file) => {
+      images.push(`./assets/original/${file}`);
+    });
+  }
+});
 
 export const resizeImages = (
   req: Request,
   res: Response,
   next: NextFunction
 ) => {
-  images.map((item) => {
-    const filename = item.split('/').find((el) => el.endsWith('jpeg'));
-    sharp(item)
-      .resize(200, 200)
-      .toFile(`./assets/edited/${filename}-${Date.now()}.jpeg`);
-  });
+  if (images.length > 1) {
+    images.map((item) => {
+      const filenameArr = item.split('/');
+      const filename = filenameArr[filenameArr.length - 1];
+      sharp(item).resize(200, 200).toFile(`./assets/resized/${filename}`);
+    });
+  }
   next();
 };

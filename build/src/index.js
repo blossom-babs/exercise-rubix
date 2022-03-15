@@ -8,8 +8,8 @@ const router_1 = __importDefault(require("./routes/router"));
 const app = (0, express_1.default)();
 const PORT = 3000;
 app.use('/', router_1.default);
-app.get('/blossom', (req, res) => {
-    res.send('something');
+app.get('*', (req, res) => {
+    res.send('404');
 });
 app.listen(PORT, () => console.log('server is listening on port', PORT));
 exports.default = app;

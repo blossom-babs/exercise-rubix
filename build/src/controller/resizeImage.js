@@ -11,7 +11,7 @@ fs_1.default.mkdirSync('./assets/resized', { recursive: true }); // create folde
 const images = [];
 fs_1.default.readdir('./assets/original', (err, files) => {
     if (err) {
-        console.log(err);
+        throw new Error(`${err}`);
     }
     else {
         files.forEach((file) => {
@@ -20,10 +20,8 @@ fs_1.default.readdir('./assets/original', (err, files) => {
     }
 });
 const resizeImages = (req, res, next) => {
-    console.log('1 ------ images', images);
     if (images.length > 1) {
         images.map((item) => {
-            console.log('if statement ---------- item', item);
             const filenameArr = item.split('/');
             const filename = filenameArr[filenameArr.length - 1];
             (0, sharp_1.default)(item).resize(200, 200).toFile(`./assets/resized/${filename}`);

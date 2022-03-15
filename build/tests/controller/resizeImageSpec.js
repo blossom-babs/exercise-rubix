@@ -1,7 +1,8 @@
 "use strict";
-// import { resizeImage } from '../../src/controller/resizeImage';
-// describe('test the function that handles image resizing', () => {
-//   it('resizes jpg images to thumbnail size', () => {
-//     expect(resizeImage).not.toBeFalsy();
-//   });
-// });
+Object.defineProperty(exports, "__esModule", { value: true });
+const resizeImage_1 = require("../../src/controller/resizeImage");
+describe('test the function that handles image resizing', () => {
+    it('resizes jpg images to thumbnail size', () => {
+        expect(resizeImage_1.resizeImages).not.toBeFalsy();
+    });
+});

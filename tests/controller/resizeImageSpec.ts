@@ -1,7 +1,7 @@
-// import { resizeImage } from '../../src/controller/resizeImage';
+import { resizeImages } from '../../src/controller/resizeImage';
 
-// describe('test the function that handles image resizing', () => {
-//   it('resizes jpg images to thumbnail size', () => {
-//     expect(resizeImage).not.toBeFalsy();
-//   });
-// });
+describe('test resize function', () => {
+  it('resizes images to thumbnail size', () => {
+    expect(resizeImages).not.toBeFalsy();
+  });
+});

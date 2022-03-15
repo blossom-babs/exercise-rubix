@@ -5,9 +5,9 @@ import routes from '../../src/routes/router';
 app.use('/', routes);
 
 describe('tests the routes endpoint', () => {
-  it('expects that the routes api functions as it should', async () => {
+  it('tests index endpoint',  () => {
     const request = supertest(routes);
-    const response = await request.get('/');
+    const response =  request.get('/');
     expect(response).not.toBeFalsy();
   });
 });
